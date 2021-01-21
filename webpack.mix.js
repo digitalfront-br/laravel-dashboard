@@ -14,4 +14,6 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .copyDirectory('resources/app-assets', 'public/app-assets')
+    .copyDirectory('resources/img', 'public/img/dashboard')
+    .copyDirectory('resources/img/default-avatar.jpg', 'public/img')
     .sourceMaps();

@@ -31,15 +31,21 @@
                                     <p class="px-2 mb-0">Digite seu email, receber as instruções para recuperar sua
                                         senha.</p>
                                     <div class="card-content">
+                                        @error('email')
+                                        <div class="alert alert-danger alert-dismissible fade show mx-2" role="alert">
+                                            <p class="mb-0">
+                                                {{ $message }}
+                                            </p>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        @enderror
                                         <div class="card-body">
                                             <form method="POST" action="{{ route('password.email') }}">
                                                 @csrf
                                                 <div class="form-label-group">
-                                                    @error('email')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
+
                                                     <input id="email" type="email"
                                                         class="form-control @error('email') is-invalid @enderror"
                                                         name="email" value="{{ old('email') }}" required

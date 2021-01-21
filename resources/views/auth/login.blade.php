@@ -26,16 +26,33 @@
                                     <p class="px-2">Faça login para acessar o painel de controle.
                                     </p>
                                     <div class="card-content mb-2">
+                                        @error('email')
+                                        <div class="alert alert-danger alert-dismissible fade show mx-2" role="alert">
+                                            <p class="mb-0">
+                                                {{ $message }}
+                                            </p>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        @enderror
+                                        @error('password')
+                                        <div class="alert alert-danger alert-dismissible fade show mx-2" role="alert">
+                                            <p class="mb-0">
+                                                {{ $message }}
+                                            </p>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        @enderror
                                         <div class="card-body pt-1">
+
                                             <form method="POST" action="{{ route('login') }}">
                                                 @csrf
                                                 <fieldset
                                                     class="form-label-group form-group position-relative has-icon-left">
-                                                    @error('email')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
+
                                                     <input id="email" type="text" class="form-control" type="email"
                                                         class="form-control @error('email') is-invalid @enderror"
                                                         name="email" value="{{ old('email') }}" required
@@ -48,11 +65,7 @@
                                                 </fieldset>
 
                                                 <fieldset class="form-label-group position-relative has-icon-left">
-                                                    @error('password')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
+
                                                     <input id="password" type="password"
                                                         class="form-control @error('password') is-invalid @enderror"
                                                         name="password" required autocomplete="current-password"
