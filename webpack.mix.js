@@ -15,5 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .copyDirectory('resources/app-assets', 'public/app-assets')
     .copyDirectory('resources/img', 'public/img/dashboard')
-    .copyDirectory('resources/img/default-avatar.jpg', 'public/img')
+    .copyDirectory('resources/img/avatar-default.jpg', 'public/img')
     .sourceMaps();

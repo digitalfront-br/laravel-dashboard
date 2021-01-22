@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/img/dashboard/dfront-icon.svg": "/img/dashboard/dfront-icon.svg"
+    "/img/dashboard/avatar-default.jpg": "/img/dashboard/avatar-default.jpg",
+    "/img/dashboard/dfront-icon.svg": "/img/dashboard/dfront-icon.svg",
+    "/img/avatar-default.jpg": "/img/avatar-default.jpg"
 }
